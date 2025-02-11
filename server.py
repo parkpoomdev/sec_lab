@@ -33,10 +33,10 @@ def index():
    return render_template_string(HTML_FORM, name=name, email=email)
 
 def run_http():
-   app.run(host='10.0.2.15', port=5000, debug=False, use_reloader=False)
+   app.run(host='0.0.0.0', port=5000, debug=False, use_reloader=False)
    
 def run_https():
-   app.run(host='10.0.2.15', port=5001, ssl_context=('cert.pem', 'key.pem'), debug=False, use_reloader=False)
+   app.run(host='0.0.0.0', port=5001, ssl_context=('cert.pem', 'key.pem'), debug=False, use_reloader=False)
    
 if __name__ == '__main__':
    threading.Thread(target=run_http, daemon=True).start()
